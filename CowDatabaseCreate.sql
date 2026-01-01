@@ -87,3 +87,10 @@ create table babies(
     FOREIGN KEY (parent_cow_id) REFERENCES cows(cow_id),
     FOREIGN KEY (child_cow_id) REFERENCES cows(cow_id)
 );
+
+create table notes(
+    record_id INT AUTO_INCREMENT PRIMARY KEY,
+    cow_id INT,
+    note_text TEXT,
+    FOREIGN KEY (cow_id) REFERENCES cows(cow_id)
+);

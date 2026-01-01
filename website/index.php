@@ -38,17 +38,17 @@
             <!-------------------------->
             <!--   default cow page   -->
             <!-------------------------->
-            <div id="cow_default_tab" class="cow_section even_spacing">
-                <ul id="cow_totals" class="non_bullet even_spacing"></ul>
+            <div id="cow_default_tab" class="cow_section">
+                <ul id="cow_totals" class="non_bullet"></ul>
                 <hr class="white_line">
-                <ul id="cow_list" class="non_bullet even_spacing"></ul>
+                <ul id="cow_list" class="non_bullet"></ul>
             </div>
 
             <!-------------------------->
             <!--     add cow page     -->
             <!-------------------------->
             <div id="add_cow_tab" class="cow_section">
-                <h3 class="even_spacing">Add New Cows</h3>
+                <h3>Add New Cows</h3>
                 <form>
                     <div>
                         <label for="cowType">Cow Type:</label>
@@ -80,8 +80,8 @@
             <!--    add baby page     -->
             <!-------------------------->
             <div id="baby_tab" class="cow_section">
-                <h3 class="even_spacing">Add Baby Cow</h3>
-                <form class="even_spacing">
+                <h3>Add Baby Cow</h3>
+                <form>
                     <div>
                         <label for="mamaCowNumber">Mama Cow Number:</label>
                         <input type="number" id="mamaCowNumber" name="mamaCowNumber" min="1" max="999">
@@ -101,8 +101,8 @@
             <!--   delete cow page    -->
             <!-------------------------->
             <div id="delete_tab" class="cow_section">
-                <h3 class="even_spacing">Delete Cow</h3>
-                <form class="even_spacing">
+                <h3>Delete Cow</h3>
+                <form>
                     <div>
                         <label for="deleteCowNumber">Cow number to be deleted:</label>
                         <input type="number" id="deleteCowNumber" name="deleteCowNumber" min="1" max="999">
@@ -116,8 +116,8 @@
             <!--     add tag page     -->
             <!-------------------------->
             <div id="tag_tab" class="cow_section">
-                <h3 class="even_spacing">Add Tag to Cow</h3>
-                <form class="even_spacing">
+                <h3>Add Tag to Cow</h3>
+                <form>
                     <div>
                         <label for="OldTagNumber">Old Tag Number:</label>
                         <input type="number" id="OldTagNumber" name="OldTagNumber" min="1" max="999">
@@ -136,8 +136,8 @@
             <!--    medicate page     -->
             <!-------------------------->
             <div id="medicate_tab" class="cow_section">
-                <h3 class="even_spacing">Administer Medicine to Cow</h3>
-                <form class="even_spacing">
+                <h3>Administer Medicine to Cow</h3>
+                <form>
                     <div class="grid_container">
                         <label>Medications:</label>
                         <div class="cow_medication_box">
@@ -183,8 +183,8 @@
             <!--    add note page     -->
             <!-------------------------->
             <div id="notes_tab" class="cow_section">
-                <h3 class="even_spacing">Additional Notes</h3>
-                <form class="even_spacing">
+                <h3>Additional Notes</h3>
+                <form>
                     <div>
                         <label for="addNote">Add Note:</label>
                         <input type="text" id="addNote" name="addNote">
@@ -214,17 +214,17 @@
             <!--    default medicine page    -->
             <!--------------------------------->
             <div id="medicine_default_tab" class="medicine_section">
-                <h2 class="even_spacing">Medications</h2>
+                <h2 >Medications</h2>
                 <hr class="white_line">
-                <ul id="medicine_list" class="non_bullet even_spacing"></ul>
+                <ul id="medicine_list" class="non_bullet"></ul>
             </div>
 
             <!--------------------------------->
             <!--      add medicine page      -->
             <!--------------------------------->
             <div id="add_medicine_tab" class="medicine_section">
-                <h3 class="even_spacing">Add New Medication</h3>
-                <form class="even_spacing">
+                <h3>Add New Medication</h3>
+                <form>
                     <div>
                         <label for="add_medicaiton_name">Medication Name:</label>
                         <input type="text" id="add_medicaiton_name" name="add_medicaiton_name">
@@ -243,8 +243,8 @@
             <!--    delete medicine page     -->
             <!--------------------------------->
             <div id="delete_medicine_tab" class="medicine_section">
-                <h3 class="even_spacing">Delete Medicaiton</h3>
-                <form class="even_spacing">
+                <h3>Delete Medicaiton</h3>
+                <form>
                     <div>
                         <label for="delete_medicaiton_name">Medication Name:</label>
                         <input type="text" id="delete_medicaiton_name" name="delete_medicaiton_name">

@@ -1,0 +1,158 @@
+:root {
+    --background-color: #C5C6C7;
+    --second-background_color: #333;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+}
+
+button {
+    box-shadow: none;
+    border: none;
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.section_body * {
+    border: 5px;
+    background-color: var(--second-background_color);
+    color: white;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+/************************************************/
+/*             Nav Bar stuff                    */
+/************************************************/
+.navbar {
+    margin: 10px;
+    padding: 10px;
+}
+.navbar * {
+    background-color: var(--second-background_color);   /* navbar background */
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+.navbar li {
+    padding: 15px;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+.navbar button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background 0.3s;
+}
+.navbar button:hover {
+    background-color: #555;
+    border-radius: 30px;
+}
+
+/************************************************/
+/*             cow section stuff                */
+/************************************************/
+#cow_nav {
+    margin-top: -20px;
+    display: block;
+}
+#cow_body {
+    color: white;
+    display: block;
+}
+#cow_default_tab {
+    display: block;
+}
+#cow_list {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 5 equal columns */
+    gap: 10px; 
+}
+#cow_totals {
+    list-style: none;
+}
+#cow_totals ul {
+    display: flex;
+    justify-content: space-around;
+}
+#cow_body form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cow_body div h3 {
+    border: 5px solid;
+    border-color: white;
+    display: inline-block;
+}
+#cow_body form div {
+    padding: 0px;
+    margin: 0px;
+}
+#cow_body form div * {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+#cow_body form button {
+    border: 5px solid;
+    border-color: white;
+    display: inline-block;
+}
+#cow_body div form div div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+#cow_body div form div div input{
+    display: block;
+    border: 2px solid;
+}
+.cow_section {
+    display: none;
+}
+
+/************************************************/
+/*           medicine section stuff             */
+/************************************************/
+#medicine_nav {
+    margin-top: -20px;
+}
+#medicine {
+    display: none;
+}
+
+/************************************************/
+/*            auction section stuff             */
+/************************************************/
+#auction_nav {
+    margin-top: -20px;
+}
+#auction {
+    display: none;
+}

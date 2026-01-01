@@ -1,3 +1,6 @@
+//=====================================================================
+//                    get cow info from database
+//=====================================================================
 fetch("api/cows.php")
   .then(response => response.json())
   .then(data => {
@@ -27,4 +30,27 @@ fetch("api/cows.php")
       cowList.innerHTML = "<li>Failed to load cows</li>";
   });
 
-  
+
+
+//=====================================================================
+//               get medication info from database
+//=====================================================================
+fetch("api/medicine.php")
+  .then(response => response.json())
+  .then(data => {
+    const medicineList = document.getElementById("medicine_list");
+    medicineList.innerHTML = ""; // clear existing items
+
+    // Display individual medicines
+    const medications = data.medications;
+    medications.forEach(medication => {
+        const li = document.createElement("li");
+        li.textContent = medication.medication_name;
+        medicineList.appendChild(li);
+    });
+  })
+  .catch(err => {
+      console.error("Error fetching medications:", err);
+      const medicineList = document.getElementById("medicine_list");
+      medicineList.innerHTML = "<li>Failed to load medications</li>";
+  });

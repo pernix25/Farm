@@ -17,7 +17,7 @@ function showSection(id, section_class_name) {
 
 function showNav(id) {
     // set all seciton to display none
-    document.querySelectorAll('.nav_section').forEach(sec => {
+    document.querySelectorAll('.section_nav').forEach(sec => {
         sec.style.display = "none";
     });
 

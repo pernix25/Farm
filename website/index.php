@@ -13,9 +13,9 @@
         <ul>
             <li><button onclick="showPage('cow')">Cows</button></li>
             <li><button onclick="showPage('medicine')">Medications</button></li>
-            <li><button onclick="showPage('auction')">Auction</button></li>
+            <li><button onclick="showPage('transactions')">Transactions</button></li>
             <li><button onclick="showPage('analytics')">Analytics</button></li>
-            <li><button onclick="showPage('Missellaneous')">Missellaneous</button></li>
+            <li><button onclick="showPage('read_notes')">Read Notes</button></li>
         </ul>
     </nav>
 
@@ -49,11 +49,11 @@
             <!-------------------------->
             <div id="add_cow_tab" class="cow_section">
                 <h3>Add New Cows</h3>
-                <form>
+                <form id="add_cow_form">
                     <div>
                         <label for="cowType">Cow Type:</label>
                         <select id="cowType" name="cowType">
-                            <option value="Heifer">Heifer</option>
+                            <option value="Heifer" selected>Heifer</option>
                             <option value="Cow">Cow</option>
                             <option value="Bull">Bull</option>
                             <option value="Steer">Steer</option>
@@ -62,14 +62,14 @@
 
                     <div>
                         <div id="cowNumbers">
-                            <input type="number" name="cow_numbers[]" placeholder="Cow number">
+                            <input type="number" name="cow_numbers[]" placeholder="Cow number" required>
                         </div>
                         <button type="button" id="addCowNumberBtn">Add another number</button>
                     </div>
 
                     <div>
                         <label for="">Date Added:</label>
-                        <input type="date" id="birthDate" name="birthDate">
+                        <input type="date" id="birthDate" name="birthDate" required>
                     </div>
 
                     <button type="submit">Add Cow</button>
@@ -81,16 +81,26 @@
             <!-------------------------->
             <div id="baby_tab" class="cow_section">
                 <h3>Add Baby Cow</h3>
-                <form>
+                <form id="add_baby_form">
                     <div>
                         <label for="mamaCowNumber">Mama Cow Number:</label>
-                        <input type="number" id="mamaCowNumber" name="mamaCowNumber" min="1" max="999">
+                        <input type="number" id="mamaCowNumber" name="mamaCowNumber" min="1" max="999" required>
                     </div>
-                    <div>
+                    <div id="babyCowContainer">
                         <div id="babyCowNumbers">
-                            <input type="number" name="baby_cow_numbers[]" placeholder="Baby cow number">
+                            <div>
+                                <input type="number" name="baby_cow_numbers[]" placeholder="Baby cow number" required>
+
+                                <select name="babyCowTypes[]">
+                                    <option value="Heifer" selected>Heifer</option>
+                                    <option value="Cow">Cow</option>
+                                    <option value="Bull">Bull</option>
+                                    <option value="Steer">Steer</option>
+                                </select>
+                            </div>
                         </div>
-                        <button type="button" id="addBabyNumberBtn">Add another baby number</button>
+
+                        <button type="button" id="addBabyNumberBtn">Add another baby cow</button>
                     </div>
 
                     <button type="submit">Add Babies</button>
@@ -117,7 +127,7 @@
             <!-------------------------->
             <div id="tag_tab" class="cow_section">
                 <h3>Add Tag to Cow</h3>
-                <form>
+                <form id="add_tag_form">
                     <div>
                         <label for="OldTagNumber">Old Tag Number:</label>
                         <input type="number" id="OldTagNumber" name="OldTagNumber" min="1" max="999">
@@ -139,33 +149,13 @@
                 <h3>Administer Medicine to Cow</h3>
                 <form>
                     <div class="grid_container">
-                        <label>Medications:</label>
-                        <div class="cow_medication_box">
-                            <label>
-                                <input type="checkbox" name="medications[]" value="Ultra Choice 7">
-                                Ultra Choice 7
-                            </label>
-                            <label>
-                                <input type="checkbox" name="medications[]" value="LA 300">
-                                LA 300
-                            </label>
-                            <label>
-                                <input type="checkbox" name="medications[]" value="Dectomax Wormer">
-                                Dectomax Wormer
-                            </label>
-                            <label>
-                                <input type="checkbox" name="medications[]" value="Virashield 6VL5">
-                                Virashield 6VL5
-                            </label>
-                            <label>
-                                <input type="checkbox" name="medications[]" value="Resflor">
-                                Resflor
-                            </label>
-                            <label>
-                                <input type="checkbox" name="medications[]" value="Draxxin">
-                                Draxxin
-                            </label>
-                        </div>
+                        <label>Medications</label>
+                        <div id="cow_medication_box"></div>
+                    </div>
+
+                    <div>
+                        <label for="number_doses">Number of Doses:</label>
+                        <input type="number" id="number_doses" name="number_doses" min="1" max="999">
                     </div>
 
                     <div>
@@ -186,8 +176,15 @@
                 <h3>Additional Notes</h3>
                 <form>
                     <div>
-                        <label for="addNote">Add Note:</label>
-                        <input type="text" id="addNote" name="addNote">
+                        <label for="noteCowNumber">Cow number to take note on:</label>
+                        <input type="number" id="noteCowNumber" name="noteCowNumber" min="1" max="999">
+                    </div>
+
+                    <div>
+                        <textarea id="addNote" 
+                                name="addNote"
+                                rows="6"
+                                placeholder="Enter notes about this cow"></textarea>
                     </div>
 
                     <button type="submit">Add Note</button>
@@ -205,7 +202,7 @@
                 <li><button onclick="showSection('add_medicine_tab', 'medicine_section')">Add Medication</button></li>
                 <li><button onclick="showSection('delete_medicine_tab', 'medicine_section')">Delete Medication</button></li>
                 <li><button onclick="showSection('medicine_info_tab', 'medicine_section')">Medication Info</button></li>
-                <li><button onclick="showSection('medicine_purchases_tab', 'medicine_section')">Medication Purchases</button></li>
+                <li><button onclick="showSection('edit_medicine_tab', 'medicine_section')">Edit Medications</button></li>
             </ul>
         </nav>
 
@@ -257,21 +254,26 @@
     </div>
 
     <!---------------------------------------------------->
-    <!--                auction section                 -->
+    <!--             transactions section               -->
     <!---------------------------------------------------->
-    <div id="auction" class="page">
-        <nav id="auction_nav" class="navbar">
+    <div id="transactions" class="page">
+        <nav id="transactions_nav" class="navbar">
             <ul>
-                <li><button>Bought Cows</button></li>
-                <li><button>Sold Cows</button></li>
+                <li><button>Bought Cows - Auction</button></li>
+                <li><button>Sold Cows - Auction</button></li>
+                <li><button>Medication Purchases</button></li>
+                <li><button>Bought Cows - Manual</button></li>
+                <li><button>Sold Cows - Manual</button></li>
+                <li><button>Bought Hay</button></li>
             </ul>
         </nav>
-        <div id="auction_body" class="section_body">
-            <p>Auction main body</p>
+        <div id="transactions_body" class="section_body">
+            <p>Transactions main body</p>
         </div>
     </div>
 
-    <script src="scripts/php_script.js"></script>
+    <script src="scripts/initiallization_script.js"></script>
     <script src="scripts/dom_script.js"></script>
+    <script src="scripts/cow_form_script.js"></script>
 </body>
 </html>

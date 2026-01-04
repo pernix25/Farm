@@ -11,7 +11,6 @@
     background-color: var(--background-color);
 }
 
-/* Body styling */
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -51,7 +50,7 @@ button[type="submit"]:active {
     padding: 10px;
 }
 .navbar * {
-    background-color: var(--second-background_color);   /* navbar background */
+    background-color: var(--second-background_color);
     padding: 10px 20px;
     border-radius: 30px;
 }
@@ -90,8 +89,9 @@ button[type="submit"]:active {
     display: block;
     border-top: 2px solid white;
     border-radius: 0px;
-    width: 100%;
+    width: 95%;
     margin-left: 0;
+    justify-self: center;
 }
 .grid_container {
     padding: 100px;
@@ -114,7 +114,7 @@ button[type="submit"]:active {
     background-color: var(--second-background_color);
     color: white;
     border-radius: 30px;
-    padding: 10px;
+    padding: 15px;
     margin: 10px;
     text-align: center;
 }
@@ -142,7 +142,7 @@ button[type="submit"]:active {
     border-color: white;
     display: inline-block;
 }
-.section_body div form div div:not(.cow_medication_box) {
+.section_body div form div div {
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -180,15 +180,22 @@ button[type="submit"]:active {
 .cow_section {
     display: none;
 }
-.cow_medication_box {
+#babyCowNumbers div {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background-color: var(--second-background_color);
+}
+#cow_medication_box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     background-color: white;
     padding: 10px;
+    margin: 25px;
     border-radius: 10px;
 }
-.cow_medication_box label {
+#cow_medication_box label {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -218,9 +225,9 @@ button[type="submit"]:active {
 /************************************************/
 /*            auction section stuff             */
 /************************************************/
-#auction_nav {
+#transactions_nav {
     margin-top: -20px;
 }
-#auction {
+#transactions {
     display: none;
 }

@@ -1,3 +1,7 @@
+// File Description:
+// javascript code that just reads data from the database and 
+// appends data to website at start
+
 //=====================================================================
 //                    get cow info from database
 //=====================================================================
@@ -38,6 +42,7 @@ fetch("api/cows.php")
 fetch("api/medicine.php")
   .then(response => response.json())
   .then(data => {
+    // dynamically creates default page for medicaitons
     const medicineList = document.getElementById("medicine_list");
     medicineList.innerHTML = ""; // clear existing items
 
@@ -47,6 +52,24 @@ fetch("api/medicine.php")
         const li = document.createElement("li");
         li.textContent = medication.medication_name;
         medicineList.appendChild(li);
+    });
+
+    // dynamically creates the checkbox for cows page on administering medicine
+    const box = document.getElementById("cow_medication_box");
+    box.innerHTML = "";
+
+    medications.forEach(med => {
+        const label = document.createElement("label");
+
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        input.name = "medications[]";
+        input.value = med.medication_name; // or med.medication_id
+
+        label.appendChild(input);
+        label.append(" " + med.medication_name);
+
+        box.appendChild(label);
     });
   })
   .catch(err => {

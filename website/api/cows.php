@@ -2,6 +2,7 @@
 header("Content-Type: application/json");
 require "db.php";
 
+// query that counts the total number of cow types in database
 $sqlCounts = "
     SELECT 
         ct.type_desc,
@@ -11,14 +12,16 @@ $sqlCounts = "
     GROUP BY ct.type_desc
 ";
 
+// executes query
 $resultCounts = $conn->query($sqlCounts);
 $typeCounts = [];
 
+// iterate result rows appending them to typeCounts -> {type_desc : total}
 while ($row = $resultCounts->fetch_assoc()) {
     $typeCounts[$row['type_desc']] = (int)$row['total'];
 }
 
-// Individual cow details with numbers
+// query for individual cow details with numbers
 $sqlCows = "
     SELECT 
         c.cow_id,
@@ -30,12 +33,16 @@ $sqlCows = "
     GROUP BY c.cow_id
 ";
 
+// executes query
 $resultCows = $conn->query($sqlCows);
 $cows = [];
+
+// iterates over result rows appending data to cows -> {cow_id : 1, type_desc : Heifer, numbers : 15, 155}
 while ($row = $resultCows->fetch_assoc()) {
     $cows[] = $row;
 }
 
+// encode results into json for parsing in javascript file
 echo json_encode([
     "cow_types" => $typeCounts,
     "cows" => $cows

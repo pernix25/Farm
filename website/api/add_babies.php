@@ -70,7 +70,7 @@ try {
 
         // throw error if cow type can not be found
         if (!$typeRow) {
-            trigger_error("Cow type coud not be found", E_USER_ERROR);
+            throw new Exception("Cow number not found: $number");
         }
 
         $type_id = $typeRow['type_id'];

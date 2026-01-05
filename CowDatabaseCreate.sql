@@ -92,5 +92,8 @@ create table notes(
     record_id INT AUTO_INCREMENT PRIMARY KEY,
     cow_id INT,
     note_text TEXT,
-    FOREIGN KEY (cow_id) REFERENCES cows(cow_id)
+    note_date DATE,
+    cow_state INT,
+    FOREIGN KEY (cow_id) REFERENCES cows(cow_id),
+    FOREIGN KEY (cow_state) REFERENCES cow_states(state_id)
 );

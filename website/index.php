@@ -27,7 +27,7 @@
             <ul>
                 <li><button onclick="showSection('add_cow_tab', 'cow_section')">Add Cow</button></li>
                 <li><button onclick="showSection('baby_tab', 'cow_section')">Add Baby</button></li>
-                <li><button onclick="showSection('delete_tab', 'cow_section')">Delete Cow</button></li>
+                <li style="display: none"><button onclick="showSection('delete_tab', 'cow_section')">Delete Cow</button></li>
                 <li><button onclick="showSection('tag_tab', 'cow_section')">Add Tag</button></li>
                 <li><button onclick="showSection('medicate_tab', 'cow_section')">Medicate</button></li>
                 <li><button onclick="showSection('notes_tab', 'cow_section')">Add Note</button></li>
@@ -68,7 +68,7 @@
                     </div>
 
                     <div>
-                        <label for="">Date Added:</label>
+                        <label for="birthDate">Date Added:</label>
                         <input type="date" id="birthDate" name="birthDate" required>
                     </div>
 
@@ -147,7 +147,7 @@
             <!-------------------------->
             <div id="medicate_tab" class="cow_section">
                 <h3>Administer Medicine to Cow</h3>
-                <form>
+                <form id="medicate_form">
                     <div class="grid_container">
                         <label>Medications</label>
                         <div id="cow_medication_box"></div>
@@ -159,10 +159,15 @@
                     </div>
 
                     <div>
-                        <div id="sickCowNumbers">
+                        <div id="sick_cow_numbers">
                             <input type="number" name="sick_cow_numbers[]" placeholder="Sick cow number">
                         </div>
                         <button type="button" id="addSickCowNumberBtn">Add another sick number</button>
+                    </div>
+
+                    <div>
+                        <label for="administration_date">Date Administered:</label>
+                        <input type="date" id="administration_date" name="administration_date" required>
                     </div>
 
                     <button type="submit">Medicate Cows</button>
@@ -180,11 +185,18 @@
                         <input type="number" id="noteCowNumber" name="noteCowNumber" min="1" max="999">
                     </div>
 
+                    <div id="notes_drop_down"></div>
+
                     <div>
                         <textarea id="addNote" 
                                 name="addNote"
                                 rows="6"
                                 placeholder="Enter notes about this cow"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="note_date">Date:</label>
+                        <input type="date" id="note_date" name="note_date" required>
                     </div>
 
                     <button type="submit">Add Note</button>

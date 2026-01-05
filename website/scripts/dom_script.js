@@ -104,7 +104,7 @@ document.getElementById("addBabyNumberBtn").addEventListener("click", () => {
 //     add sick cow
 //-----------------------
 document.getElementById("addSickCowNumberBtn").addEventListener("click", () => {
-    const container = document.getElementById("sickCowNumbers");
+    const container = document.getElementById("sick_cow_numbers");
 
     const input = document.createElement("input");
     input.type = "number";

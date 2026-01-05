@@ -43,7 +43,8 @@ insert into cow_states (state_desc) values
     ('miscarried'), -- 4
     ('birth'),		-- 5
     ('treated'), 	-- 6
-    ('tagged');		-- 7
+    ('tagged'),		-- 7
+    ('non specific');
     
 -- insert cow events
 insert into cow_events (cow_id, state_id, event_date) values

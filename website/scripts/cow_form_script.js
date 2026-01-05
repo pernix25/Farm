@@ -94,3 +94,38 @@ document.getElementById("add_tag_form").addEventListener("submit", (e) => {
     })
     .catch(err => console.error(err));
 });
+
+//===================================================================================================
+//                                    medicate cow Form
+//===================================================================================================
+document.getElementById("medicate_form").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("api/medicate_cow.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert(`Successfully medicated ${data.cow_count} cows with ${data.medication_count} medications`);
+
+            form.reset();
+
+            // reset the number of cow numbers being medicated to 1
+            document.getElementById("sick_cow_numbers").innerHTML =
+                `<input type="number" name="sick_cow_numbers[]" placeholder="Sick cow number">`;
+        } else {
+            alert("Error " + data.message);
+        }
+    })
+    .catch(err => console.error(err));
+    alert("Network or server error: " + err.message);
+});
+
+//===================================================================================================
+//                                    add note Form
+//===================================================================================================

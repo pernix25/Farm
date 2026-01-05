@@ -6,8 +6,8 @@
 //                    get cow info from database
 //=====================================================================
 fetch("api/cows.php")
-  .then(response => response.json())
-  .then(data => {
+.then(response => response.json())
+.then(data => {
     const cowList = document.getElementById("cow_list");
     const cowTotals = document.getElementById("cow_totals");
     cowList.innerHTML = ""; // clear existing items
@@ -40,8 +40,8 @@ fetch("api/cows.php")
 //               get medication info from database
 //=====================================================================
 fetch("api/medicine.php")
-  .then(response => response.json())
-  .then(data => {
+.then(response => response.json())
+.then(data => {
     // dynamically creates default page for medicaitons
     const medicineList = document.getElementById("medicine_list");
     medicineList.innerHTML = ""; // clear existing items
@@ -77,3 +77,35 @@ fetch("api/medicine.php")
       const medicineList = document.getElementById("medicine_list");
       medicineList.innerHTML = "<li>Failed to load medications</li>";
   });
+
+//=====================================================================
+//               get medication info from database
+//=====================================================================
+fetch("api/cow_states.php")
+.then(res => res.json())
+.then(data => {
+    const notes_div = document.getElementById("notes_drop_down")
+    notes_div.innerHTML = "" // clear existing data
+
+    const cow_states = data.cow_states;
+
+    const drop_down = document.createElement("select");
+    drop_down.name = "note_types[]";
+
+    cow_states.forEach(state => {
+        const opt = document.createElement("option");
+        opt.value = state.state_id;
+        opt.textContent = state.state_desc;
+
+        if (state.state_desc === "non specific") {
+            opt.selected = true;
+        }
+
+        drop_down.appendChild(opt);
+    });
+    notes_div.appendChild(drop_down);
+})
+.catch(err => {
+    console.error("Error fetching cow states:", err);
+    container.innerHTML = "<p>Failed to load states</p>";
+});

@@ -79,7 +79,7 @@ fetch("api/medicine.php")
   });
 
 //=====================================================================
-//               get medication info from database
+//               get cow state info from database
 //=====================================================================
 fetch("api/cow_states.php")
 .then(res => res.json())
@@ -90,7 +90,7 @@ fetch("api/cow_states.php")
     const cow_states = data.cow_states;
 
     const drop_down = document.createElement("select");
-    drop_down.name = "note_types[]";
+    drop_down.name = "note_types";
 
     cow_states.forEach(state => {
         const opt = document.createElement("option");

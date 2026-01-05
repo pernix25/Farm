@@ -179,17 +179,17 @@
             <!-------------------------->
             <div id="notes_tab" class="cow_section">
                 <h3>Additional Notes</h3>
-                <form>
+                <form id="notes_form">
                     <div>
-                        <label for="noteCowNumber">Cow number to take note on:</label>
-                        <input type="number" id="noteCowNumber" name="noteCowNumber" min="1" max="999">
+                        <label for="note_cow_number">Cow number to take note on:</label>
+                        <input type="number" id="note_cow_number" name="note_cow_number" min="1" max="999">
                     </div>
 
                     <div id="notes_drop_down"></div>
 
                     <div>
-                        <textarea id="addNote" 
-                                name="addNote"
+                        <textarea id="add_note" 
+                                name="add_note"
                                 rows="6"
                                 placeholder="Enter notes about this cow"></textarea>
                     </div>

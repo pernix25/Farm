@@ -13,6 +13,7 @@ $cowTypeDesc = $_POST['cowType'];
 $cowNumbers = $_POST['cow_numbers'];
 $birthDate = $_POST['birthDate'];
 
+// validate post data
 if ($cowTypeDesc === '' || empty($cowNumbers)) {
     echo json_encode(["success" => false, "error" => "Missing cow type or numbers"]);
     exit;

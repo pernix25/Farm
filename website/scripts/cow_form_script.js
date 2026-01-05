@@ -122,10 +122,37 @@ document.getElementById("medicate_form").addEventListener("submit", (e) => {
             alert("Error " + data.message);
         }
     })
-    .catch(err => console.error(err));
-    alert("Network or server error: " + err.message);
+    .catch(err => {
+        console.error(err);
+        alert("Network or server error: " + err.message);
+    });
 });
 
 //===================================================================================================
 //                                    add note Form
 //===================================================================================================
+document.getElementById("notes_form").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("api/add_note.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert("Successfully added note to cow");
+
+            form.reset();
+        } else {
+            alert("Error " + data.message);
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Network or server error: " + err.message);
+    });
+});

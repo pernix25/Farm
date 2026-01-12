@@ -5,7 +5,7 @@
 //=====================================================================
 //                    get cow info from database
 //=====================================================================
-fetch("api/cows.php")
+fetch("http://localhost:8080/Farmstuff/Farm/website/api/cows.php")
 .then(response => response.json())
 .then(data => {
     const cowList = document.getElementById("cow_list");
@@ -39,7 +39,7 @@ fetch("api/cows.php")
 //=====================================================================
 //               get medication info from database
 //=====================================================================
-fetch("api/medicine.php")
+fetch("http://localhost:8080/Farmstuff/Farm/website/api/medicine.php")
 .then(response => response.json())
 .then(data => {
     // dynamically creates default page for medicaitons
@@ -81,7 +81,7 @@ fetch("api/medicine.php")
 //=====================================================================
 //               get cow state info from database
 //=====================================================================
-fetch("api/cow_states.php")
+fetch("http://localhost:8080/Farmstuff/Farm/website/api/cow_states.php")
 .then(res => res.json())
 .then(data => {
     const notes_div = document.getElementById("notes_drop_down")

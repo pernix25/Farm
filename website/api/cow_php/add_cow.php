@@ -1,5 +1,5 @@
 <?php
-require "db.php";
+require "../db.php";
 header("Content-Type: application/json");
 
 // validates that request is a post method

@@ -1,7 +1,7 @@
 <?php
 
 header("Content-Type: application/json");
-require "db.php";
+require "../db.php";
 
 // validates that request is a post method
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

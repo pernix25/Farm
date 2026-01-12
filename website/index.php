@@ -233,10 +233,10 @@
             <!--------------------------------->
             <div id="add_medicine_tab" class="medicine_section">
                 <h3>Add New Medication</h3>
-                <form>
+                <form id="add_medicine_form">
                     <div>
-                        <label for="add_medicaiton_name">Medication Name:</label>
-                        <input type="text" id="add_medicaiton_name" name="add_medicaiton_name">
+                        <label for="add_medication_name">Medication Name:</label>
+                        <input type="text" id="add_medication_name" name="add_medication_name">
                     </div>
 
                     <div>

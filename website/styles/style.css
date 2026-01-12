@@ -173,8 +173,9 @@ button[type="submit"]:active {
     grid-template-columns: repeat(3, 1fr); /* 5 equal columns */
     gap: 10px; 
 }
-#cow_totals ul {
+#cow_totals {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
 }
 .cow_section {

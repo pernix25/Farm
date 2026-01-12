@@ -212,7 +212,7 @@
         <nav id="medicine_nav" class="navbar section_nav">
             <ul>
                 <li><button onclick="showSection('add_medicine_tab', 'medicine_section')">Add Medication</button></li>
-                <li><button onclick="showSection('delete_medicine_tab', 'medicine_section')">Delete Medication</button></li>
+                <li style="display: none"><button onclick="showSection('delete_medicine_tab', 'medicine_section')">Delete Medication</button></li>
                 <li><button onclick="showSection('medicine_info_tab', 'medicine_section')">Medication Info</button></li>
                 <li><button onclick="showSection('edit_medicine_tab', 'medicine_section')">Edit Medications</button></li>
             </ul>
@@ -271,11 +271,9 @@
     <div id="transactions" class="page">
         <nav id="transactions_nav" class="navbar">
             <ul>
-                <li><button>Bought Cows - Auction</button></li>
-                <li><button>Sold Cows - Auction</button></li>
+                <li><button>Bought Cows</button></li>
+                <li><button>Sold Cows</button></li>
                 <li><button>Medication Purchases</button></li>
-                <li><button>Bought Cows - Manual</button></li>
-                <li><button>Sold Cows - Manual</button></li>
                 <li><button>Bought Hay</button></li>
             </ul>
         </nav>
@@ -287,5 +285,6 @@
     <script src="scripts/initiallization_script.js"></script>
     <script src="scripts/dom_script.js"></script>
     <script src="scripts/cow_form_script.js"></script>
+    <script src="scripts/medicine_form_script.js"></script>
 </body>
 </html>

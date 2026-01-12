@@ -10,7 +10,7 @@ document.getElementById("add_cow_form").addEventListener("submit", (e) => {
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("api/add_cow.php", {
+    fetch("api/cow_php/add_cow.php", {
         method: "POST",
         body: formData
     })
@@ -40,7 +40,7 @@ document.getElementById("add_baby_form").addEventListener("submit", (e) => {
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("api/add_babies.php", {
+    fetch("api/cow_php/add_babies.php", {
         method: "POST",
         body: formData
     })
@@ -78,7 +78,7 @@ document.getElementById("add_tag_form").addEventListener("submit", (e) => {
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("api/add_tag.php", {
+    fetch("api/cow_php/add_tag.php", {
         method: "POST",
         body: formData
     })
@@ -104,7 +104,7 @@ document.getElementById("medicate_form").addEventListener("submit", (e) => {
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("api/medicate_cow.php", {
+    fetch("api/cow_php/medicate_cow.php", {
         method: "POST",
         body: formData
     })
@@ -137,7 +137,7 @@ document.getElementById("notes_form").addEventListener("submit", (e) => {
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("api/add_note.php", {
+    fetch("api/cow_php/add_note.php", {
         method: "POST",
         body: formData
     })
